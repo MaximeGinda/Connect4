@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>Connect4</string>
     <key>CFBundleGetInfoString</key>
-    <string>Unity Player version 2020.3.26f1 (7298b473bc1a). (c) 2022 Unity Technologies ApS. All rights reserved.</string>
+    <string>Unity Player version 2021.2.11f1 (e50cafbb4399). (c) 2022 Unity Technologies ApS. All rights reserved.</string>
     <key>CFBundleIconFile</key>
     <string>PlayerIcon.icns</string>
     <key>CFBundleIdentifier</key>
@@ -40,6 +40,6 @@
     <key>NSPrincipalClass</key>
     <string>PlayerApplication</string>
     <key>UnityBuildNumber</key>
-    <string>7298b473bc1a</string>
+    <string>e50cafbb4399</string>
   </dict>
 </plist>
