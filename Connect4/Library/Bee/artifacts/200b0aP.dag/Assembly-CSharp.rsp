@@ -307,6 +307,7 @@
 -r:"Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aP.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Script/MainMenu.cs"
+"Assets/Script/SettingsMenu.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
