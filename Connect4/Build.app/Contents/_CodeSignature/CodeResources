@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Data/Managed/Assembly-CSharp.dll</key>
 		<data>
-		hCvIBK1arxysqTOUIZUotFyPk/E=
+		XE4+L+QzPUR1+xRQkVeYiISn6BI=
 		</data>
 		<key>Resources/Data/Managed/Mono.Security.dll</key>
 		<data>
@@ -510,15 +510,23 @@
 		</data>
 		<key>Resources/Data/globalgamemanagers</key>
 		<data>
+<<<<<<< HEAD
 		hLY2pW90U0TFvaCASiwXROuWksE=
+=======
+		t/P4j8YMQCIZ+4rprrBvaFRuAMI=
+>>>>>>> parent of 93bd061 (UP)
 		</data>
 		<key>Resources/Data/globalgamemanagers.assets</key>
 		<data>
-		qIxaLzLFXhBSu5IhOtfVnzdaYxM=
+		XAYMt2Phkgd99g9QlaWipMxhlYk=
 		</data>
 		<key>Resources/Data/level0</key>
 		<data>
+<<<<<<< HEAD
 		ocTOHX+KMQovQCbVSQN1NCn4TzY=
+=======
+		5F5TDrfZ1kfu2sohIicFYTuJw5Q=
+>>>>>>> parent of 93bd061 (UP)
 		</data>
 		<key>Resources/Data/level1</key>
 		<data>
@@ -534,7 +542,11 @@
 		</data>
 		<key>Resources/Data/sharedassets0.assets</key>
 		<data>
+<<<<<<< HEAD
 		S6S2yM+pEeZeui0sTPqOnlmxdSg=
+=======
+		hcD275GdQRV5LUzH9Qssy5Zk9dw=
+>>>>>>> parent of 93bd061 (UP)
 		</data>
 		<key>Resources/Data/sharedassets0.assets.resS</key>
 		<data>
@@ -738,7 +750,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T98h2glT1gWALRGRZKWYcR5/nQt5BNlzJ8WIUpdpKrU=
+			vKUYBzvWJs8KQ0UoGyPR9ReX4ehyLdGqBdm66HrAWiE=
 			</data>
 		</dict>
 		<key>Resources/Data/Managed/Mono.Security.dll</key>
@@ -1620,21 +1632,29 @@
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< HEAD
 			Kic+M58vUdfIjo15iGDZQRfeRIXU3ZSuuuFpDOXcbcM=
+=======
+			brV3P0bfQpiE/ZLUhu/jumlV9BY7o3Mo1gNLYUbXqG4=
+>>>>>>> parent of 93bd061 (UP)
 			</data>
 		</dict>
 		<key>Resources/Data/globalgamemanagers.assets</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fojVmeVUelBFVMbZgKYwVjmb0gOpAKDgu016CyJdYBA=
+			a6v7ZGYsWNgPnuxgI0snTaHtTtUwUXQPSocX4RGdfPA=
 			</data>
 		</dict>
 		<key>Resources/Data/level0</key>
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< HEAD
 			eu6doQrr5wmb3+jVYUceFxpupOULU4LPQgRQ3WfFJYY=
+=======
+			d6YLDSqzk41EstqHWegnfHvLbw2i3toUmY8lb2fTp7U=
+>>>>>>> parent of 93bd061 (UP)
 			</data>
 		</dict>
 		<key>Resources/Data/level1</key>
@@ -1662,7 +1682,11 @@
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< HEAD
 			NXrbflnORq+giAkkCiKO10hPf9WwjcnzEWI4/tA/TFI=
+=======
+			WzeNlGjizs5WPgAkbrzYDmDR9+uQpkqTvmXA8BgpUz0=
+>>>>>>> parent of 93bd061 (UP)
 			</data>
 		</dict>
 		<key>Resources/Data/sharedassets0.assets.resS</key>
