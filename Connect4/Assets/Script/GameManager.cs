@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     
     private GameGrid game;
     public GameObject firework;
+    public GameObject GameObjectsToDesactive;
 
     // Start is called before the first frame update
     void Start()
@@ -60,8 +61,7 @@ public class GameManager : MonoBehaviour
     
                 hasWon = (game.checkWin(line,col)!=-1);
                 if(hasWon){
-                    Debug.Log("game over");
-                    firework.SetActive(true);
+                    fireworks();
                 }
                 SwitchPlayer();
             }
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         else{
             if(Input.GetButtonDown("Accept")){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
             }
         }
     }
@@ -93,8 +94,25 @@ public class GameManager : MonoBehaviour
         string column = "Col" + cell.x.ToString("#");
         string row = "Row" + cell.y.ToString("#");
         Vector3 spawnPosition = gameGrid.transform.Find(column).transform.position;
-	Vector3 targetPosition = gameGrid.transform.Find(column).transform.Find(row).transform.position;
-	Token token = Instantiate(teamToken, spawnPosition, new Quaternion(), tokenParent).GetComponent<Token>();
+	    Vector3 targetPosition = gameGrid.transform.Find(column).transform.Find(row).transform.position;
+	    Token token = Instantiate(teamToken, spawnPosition, new Quaternion(), tokenParent).GetComponent<Token>();
         token.setTargetPosition(targetPosition);
     }
+
+    private void fireworks(){
+        GameObjectsToDesactive.SetActive(false);
+
+        firework.SetActive(true);
+
+        if(currentPlayer == false){
+            firework.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else{
+            firework.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(true);
+        }
+
+        
+    }
+
+
 }
