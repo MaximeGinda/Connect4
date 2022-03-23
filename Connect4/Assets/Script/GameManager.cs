@@ -19,28 +19,54 @@ public class GameManager : MonoBehaviour
     public GameObject firework;
     public GameObject GameObjectsToDesactive;
 
+    private bool[] colFull = new bool[7];
+
     // Start is called before the first frame update
     void Start()
     {
         red = rToken.GetComponent<SpriteRenderer>().color;
         yellow = yToken.GetComponent<SpriteRenderer>().color;
         sm = GetComponent<SoundManager>();
-        Debug.Log(sm.name);
         UpdateSelectorPosition(false);
         SwitchPlayer();
         game = new GameGrid();
+
+        for(int i = 0; i < 7; i++){
+            colFull[i] = false;
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetButtonDown("Cancel")){
+            SceneManager.LoadScene("MainMenu");
+        }
+
+
         if(!hasWon){
             if(Input.GetButtonDown("Left")){
                 selectedColumn--;
+
+                
                 if(selectedColumn < 1){
                     selectedColumn = 1;
                 }
+                
+                while(colFull[selectedColumn-1]){
+                    selectedColumn--;
+                    if(selectedColumn < 1){
+                        selectedColumn++;
+                        while(colFull[selectedColumn-1]){
+                            selectedColumn++;
+                        }
+                    }
+                }
+
+                    
+                
                 UpdateSelectorPosition(true);
             }
             if(Input.GetButtonDown("Right")){
@@ -48,6 +74,17 @@ public class GameManager : MonoBehaviour
                 if(selectedColumn > 7){
                     selectedColumn = 7;
                 }
+
+                while(colFull[selectedColumn-1]){
+                    selectedColumn++;
+                    if(selectedColumn > 7){
+                        selectedColumn--;
+                        while(colFull[selectedColumn-1]){
+                            selectedColumn--;
+                        }
+                    }
+                }
+
                 UpdateSelectorPosition(true);
             }
             if(Input.GetButtonDown("Accept")){
@@ -63,7 +100,22 @@ public class GameManager : MonoBehaviour
                     line = game.addCoin(col, 2);
                     SpawnToken(yToken, new Vector2((float)selectedColumn,6f-(float)line));
                 }
-    
+
+                if(line == 5){
+                    colFull[col] = true;
+                    Debug.Log(col + " is full");
+                    while(colFull[selectedColumn-1]){
+                        selectedColumn--;
+                        if(selectedColumn < 1){
+                            selectedColumn++;
+                            while(colFull[selectedColumn-1]){
+                                selectedColumn++;
+                            }
+                        }
+                    }
+                    UpdateSelectorPosition(false);
+
+                }
                 hasWon = (game.checkWin(line,col)!=-1);
                 if(hasWon){
                     fireworks();
@@ -77,6 +129,7 @@ public class GameManager : MonoBehaviour
 
             }
         }
+
     }
 
     private void SwitchPlayer(){
@@ -113,11 +166,20 @@ public class GameManager : MonoBehaviour
         GameObjectsToDesactive.SetActive(false);
 
         firework.SetActive(true);
+        sm.PlayClip(3);
 
-        if(currentPlayer == false){
+        if(!currentPlayer){
+            // Joue la musique
+            sm.PlayClip(2); 
+
+            // Active le message de victoire
             firework.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
         }
         else{
+            // Joue la musique
+            sm.PlayClip(4);
+
+            // Active le message de défaite 
             firework.transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(true);
         }
 
