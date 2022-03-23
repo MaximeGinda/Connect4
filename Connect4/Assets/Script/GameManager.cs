@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private bool currentPlayer = true;
     private bool hasWon;
     private Color red, yellow;
+    private SoundManager sm;
     
     private GameGrid game;
     public GameObject firework;
@@ -23,9 +24,12 @@ public class GameManager : MonoBehaviour
     {
         red = rToken.GetComponent<SpriteRenderer>().color;
         yellow = yToken.GetComponent<SpriteRenderer>().color;
-        UpdateSelectorPosition();
+        sm = GetComponent<SoundManager>();
+        Debug.Log(sm.name);
+        UpdateSelectorPosition(false);
         SwitchPlayer();
         game = new GameGrid();
+
     }
 
     // Update is called once per frame
@@ -37,16 +41,17 @@ public class GameManager : MonoBehaviour
                 if(selectedColumn < 1){
                     selectedColumn = 1;
                 }
-                UpdateSelectorPosition();
+                UpdateSelectorPosition(true);
             }
             if(Input.GetButtonDown("Right")){
                 selectedColumn++;
                 if(selectedColumn > 7){
                     selectedColumn = 7;
                 }
-                UpdateSelectorPosition();
+                UpdateSelectorPosition(true);
             }
             if(Input.GetButtonDown("Accept")){
+                sm.PlayClip(1);
                 int col = selectedColumn-1;
                 int line = 0;
     
@@ -84,7 +89,12 @@ public class GameManager : MonoBehaviour
         currentPlayer = !currentPlayer;
     }
 
-    private void UpdateSelectorPosition(){
+    private void UpdateSelectorPosition(bool play){
+
+        if(play){
+            sm.PlayClip(0);
+        }
+        
         string column = "Col" + selectedColumn;
         Vector3 selectedPosition = gameGrid.transform.Find(column).transform.position;
         selector.transform.position = new Vector3(selectedPosition.x, selector.transform.position.y, 0f);
