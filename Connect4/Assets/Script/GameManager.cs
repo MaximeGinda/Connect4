@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private AlphaBeta alphaBeta=new AlphaBeta();
 
-    private bool withAI = true;
+    public bool withAI = false;
     private bool[] colFull = new bool[7];
     private bool canPlay = true;
 

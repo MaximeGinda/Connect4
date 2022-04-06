@@ -10622,6 +10622,7 @@ MonoBehaviour:
   selector: {fileID: 1325945191}
   firework: {fileID: 262323665}
   GameObjectsToDesactive: {fileID: 896874291}
+  withAI: 0
 --- !u!4 &1250859413
 Transform:
   m_ObjectHideFlags: 0

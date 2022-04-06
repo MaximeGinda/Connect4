@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string GameLevelAI;
     public string GameLevel;
     public GameObject settingsWindow;
 
@@ -10,6 +11,11 @@ public class MainMenu : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadScene(this.GameLevel);
+    }
+
+    public void playGameAI()
+    {
+        SceneManager.LoadScene(this.GameLevelAI);
     }
 
     // Permet d'ouvrir les settings du jeu 
